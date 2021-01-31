@@ -27,7 +27,8 @@
         #\} #\]
         #\+ #\=
         #\~ #\`
-        #\_ #\-))
+        #\_ #\-
+        #\? #\/))
 
 (define (char->string c)
   (list->string (list c)))
@@ -62,6 +63,7 @@
     [#\[ "open_bracket"]
     [#\] "close_bracket"]
     [#\- "hyphen"]
+    [#\/ "slash"]
     [(? char?) (char->string x)]
     [(? string?) x]))
 
