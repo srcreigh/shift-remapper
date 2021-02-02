@@ -28,7 +28,8 @@
         #\+ #\=
         #\~ #\`
         #\_ #\-
-        #\? #\/))
+        #\? #\/
+        #\: #\;))
 
 (define (char->string c)
   (list->string (list c)))
@@ -64,6 +65,7 @@
     [#\] "close_bracket"]
     [#\- "hyphen"]
     [#\/ "slash"]
+    [#\; "semicolon"]
     [(? char?) (char->string x)]
     [(? string?) x]))
 
@@ -109,7 +111,9 @@
 (define config
   (ruleset #:title "Programmers Dvorak"
            #:rules (list (rule #:description "Programmers Dvorak"
-                               #:manipulators (list (remap-manipulator #\= #\+)
+                               #:manipulators (list (remap-manipulator #\; #\:)
+                                                    (remap-manipulator #\: #\;)
+                                                    (remap-manipulator #\= #\+)
                                                     (remap-manipulator #\+ #\~)
                                                     (remap-manipulator #\~ #\%)
                                                     (remap-manipulator #\1 #\*)
